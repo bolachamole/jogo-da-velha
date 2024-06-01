@@ -8,7 +8,7 @@ void print_matriz(char jogo[3][3]){
 }
 
 int main(){
-    printf("JOGO DA VELHA!\nFormato de resposta: n m, onde 'n' é o número da linha e 'm' o número da coluna\n");
+    printf("Formato de resposta: n m, onde 'n' é o número da linha e 'm' o número da coluna\n");
     int rodada, cond = -1;
     char s = ' ';
     char jogo[3][3];
@@ -18,7 +18,7 @@ int main(){
         }
     }
     while(!((s != 'X') ^ (s != 'O'))){
-        printf("Quem vai primeiro? X ou O (o maiúsculo)?\n");
+        printf("Quem vai primeiro? X ou O (o maiúsculo)? ");
         scanf("%c%*c", &s);
     }
     if(s == 'X'){
@@ -28,15 +28,15 @@ int main(){
     }
 
     while(cond < 0){
-        if(rodada == 1){
-            printf("VEZ DO X!\n");
-        } else{
-            printf("VEZ DO O!\n");
-        }
         print_matriz(jogo);
+        if(rodada == 1){
+            printf("Vez do X.\n");
+        } else{
+            printf("Vez do O.\n");
+        }
 
         int m, n;
-        printf("Onde marcar?\n");
+        printf("Onde marcar? ");
         scanf("%d%*c %d%*c", &m, &n);
         for(int i = 0; i < 3; i++){
             for(int j = 0; j < 3; j++){
